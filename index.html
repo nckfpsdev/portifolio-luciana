@@ -136,10 +136,10 @@
     <section class="secao secao--suave" id="sobre">
       <div class="wrap duas">
         <figure class="sobre__foto">
-          <!-- <img src="assets/img/luciana-sobre.webp" alt="Retrato de Luciana Ferreira" width="800" height="1000" loading="lazy"> -->
-          <div class="foto--vazia" role="img" aria-label="Espaço reservado para o retrato da psicóloga">
-            <img src="assets/img/logo-claro.png" alt="" width="200" height="181">
-          </div>
+          <img src="assets/img/luciana-sobre-800.webp"
+               srcset="assets/img/luciana-sobre-480.webp 480w, assets/img/luciana-sobre-800.webp 800w"
+               sizes="(max-width: 920px) 380px, 440px"
+               alt="Luciana Ferreira, de jaleco branco, em seu consultório" width="800" height="1000" loading="lazy">
         </figure>
         <div>
           <p class="eyebrow">Sobre mim</p>
@@ -176,11 +176,19 @@
     <!-- NEUROMODULAÇÃO -->
     <section class="secao" id="neuromodulacao">
       <div class="wrap">
-        <header class="secao__cab">
-          <p class="eyebrow">Recursos complementares</p>
-          <h2>Neuromodulação não invasiva, quando indicada</h2>
-          <p>Para potencializar o processo terapêutico, utilizo tecnologias não invasivas como complemento à psicoterapia. A indicação é sempre individual e definida após avaliação clínica.</p>
-        </header>
+        <div class="duas duas--rev neuro__topo">
+          <header class="secao__cab">
+            <p class="eyebrow">Recursos complementares</p>
+            <h2>Neuromodulação não invasiva, quando indicada</h2>
+            <p>Para potencializar o processo terapêutico, utilizo tecnologias não invasivas como complemento à psicoterapia. A indicação é sempre individual e definida após avaliação clínica.</p>
+          </header>
+          <figure class="foto">
+            <img src="assets/img/neuromodulacao-foco-800.webp"
+                 srcset="assets/img/neuromodulacao-foco-480.webp 480w, assets/img/neuromodulacao-foco-800.webp 800w"
+                 sizes="(max-width: 920px) 380px, 400px"
+                 alt="Luciana Ferreira ao lado do letreiro luminoso Neuromodulação em Foco" width="800" height="1000" loading="lazy">
+          </figure>
+        </div>
         <div class="tres">
           <article class="bloco">
             <h3>Estimulação transcraniana por corrente contínua (tDCS)</h3>
@@ -251,6 +259,23 @@
           </div>
           <iframe title="Mapa do consultório na Barra da Tijuca" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
             src="https://www.google.com/maps?q=-22.9742251,-43.3655189&z=17&output=embed"></iframe>
+        </div>
+
+        <div class="galeria">
+          <figure>
+            <img src="assets/img/consultorio-brinquedos-800.webp"
+                 srcset="assets/img/consultorio-brinquedos-480.webp 480w, assets/img/consultorio-brinquedos-800.webp 800w"
+                 sizes="340px"
+                 alt="Luciana na sala de atendimento, com janela ampla e cantinho de brinquedos para crianças" width="800" height="1000" loading="lazy">
+            <figcaption>Um espaço claro e acolhedor, pensado também para crianças e adolescentes.</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/img/consultorio-estante-800.webp"
+                 srcset="assets/img/consultorio-estante-480.webp 480w, assets/img/consultorio-estante-800.webp 800w"
+                 sizes="340px"
+                 alt="Luciana sorrindo ao lado da estante com livros e o quadro Nunca desista das coisas que fazem você sorrir" width="800" height="1000" loading="lazy">
+            <figcaption>Ambiente tranquilo para você se sentir à vontade.</figcaption>
+          </figure>
         </div>
       </div>
     </section>

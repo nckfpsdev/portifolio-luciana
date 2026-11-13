@@ -109,6 +109,13 @@ p + p { margin-top: 1rem; }
 .numeros strong { display: block; font-family: var(--serif); font-size: 2.2rem; color: var(--lilas-300); line-height: 1.1; }
 .numeros span { font-size: .95rem; }
 
+.neuro__topo { margin-bottom: 2.2rem; align-items: center; }
+.neuro__topo .secao__cab { margin-bottom: 0; }
+.foto img { width: 100%; max-width: 400px; margin-inline: auto; aspect-ratio: 4 / 5; object-fit: cover; border-radius: var(--raio); box-shadow: var(--sombra); }
+.galeria { display: grid; grid-template-columns: repeat(2, minmax(0, 340px)); justify-content: center; gap: 1.6rem; margin-top: 2.4rem; }
+.galeria img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: var(--raio); box-shadow: var(--sombra); }
+.galeria figcaption { margin-top: .6rem; font-size: .92rem; color: var(--texto-suave); }
+
 .tres { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
 .bloco { background: #fff; border: 1px solid var(--lilas-200); border-radius: var(--raio); padding: 1.6rem; box-shadow: var(--sombra); }
 .bloco p { color: var(--texto-suave); font-size: .98rem; }
@@ -157,6 +164,7 @@ p + p { margin-top: 1rem; }
   .cards, .tres { grid-template-columns: 1fr 1fr; }
   .passos { grid-template-columns: 1fr 1fr; }
   .sobre__foto { max-width: 380px; }
+  .foto img { max-width: 380px; }
   .menu-btn { display: flex; }
   .menu { position: absolute; top: 100%; left: 0; right: 0; background: var(--bg); flex-direction: column; align-items: stretch; gap: 0; padding: .5rem 16px 1rem; border-bottom: 1px solid var(--lilas-200); display: none; }
   .menu.aberto { display: flex; }
@@ -165,6 +173,7 @@ p + p { margin-top: 1rem; }
 }
 @media (max-width: 560px) {
   .cards, .tres, .passos, .valores__lista { grid-template-columns: 1fr; }
+  .galeria { grid-template-columns: minmax(0, 340px); }
   .valores__lista li { border-right: 0; }
   .hero__cta .btn { width: 100%; }
 }
