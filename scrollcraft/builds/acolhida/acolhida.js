@@ -94,12 +94,12 @@
   /* Scroll reveals: content rises into place as each chapter arrives */
   var revelar = [];
   if (!reduce && 'IntersectionObserver' in window) {
-    document.querySelectorAll('.lista h2, .quem h2, .neuro__cab h2, .como__passos h2, .convite h2, .nome__titulo').forEach(function (h) {
+    document.querySelectorAll('.lista h2, .quem h2, .neuro__cab h2, .como__cab h2, .convite h2, .nome__titulo').forEach(function (h) {
       partir(h); revelar.push(h);
     });
     /* (the portrait has its own curtain and the flower is drawn, so neither is in this list) */
     var grupos = ['.lista__itens li', '.lista__apoio', '.quem__texto > p', '.quem__fichas > div',
-      '.neuro__cab > p', '.como__passos li', '.como__sala', '.ficha', '.mapa',
+      '.pilar', '.neuro__cab > p', '.como__passos li', '.como__cab > div > p', '.como__sala', '.como__local',
       '.convite__texto > p', '.respira', '.convite__texto > .btn', '.convite__contatos li'];
     grupos.forEach(function (sel) {
       var porPai = new Map();
@@ -194,7 +194,9 @@
 
     /* Act 6: the thread between the steps fills as you read down */
     var mF = medidas.get(fio);
-    por(fio, '--fio', reduce ? '1' : clamp((vh * 0.62 - (mF.top - y)) / Math.max(1, mF.h)).toFixed(4));
+    por(fio, '--fio', reduce ? '1' : (mobile
+      ? clamp((vh * 0.62 - (mF.top - y)) / Math.max(1, mF.h))
+      : clamp((vh * 0.8 - (mF.top - y)) / (vh * 0.4))).toFixed(4));
 
     /* Signature: the emblem is drawn by the whole journey, completes at the invitation */
     var topC = medidas.get(convite).top - y;
@@ -243,6 +245,54 @@
     }, { rootMargin: '0px 0px -38% 0px' });
     passos.forEach(function (p) { io.observe(p); });
   } else { passos.forEach(function (p) { p.classList.add('on'); }); }
+
+  /* Act 3: the care points open one at a time; the line fills, then the next opens. A click takes over. */
+  (function () {
+    var cx = document.querySelector('.pilares'); if (!cx) return;
+    var ps = Array.prototype.slice.call(cx.querySelectorAll('.pilar')), atual = 0;
+    function abrirPilar(i) {
+      atual = i;
+      ps.forEach(function (p, k) {
+        var on = k === i;
+        p.classList.toggle('on', on);
+        p.querySelector('.pilar__btn').setAttribute('aria-expanded', String(on));
+      });
+    }
+    ps.forEach(function (p, i) {
+      p.querySelector('.pilar__btn').addEventListener('click', function () {
+        cx.classList.remove('auto');
+        abrirPilar(i);
+      });
+      p.addEventListener('animationend', function (e) {
+        if (e.animationName === 'encher' && cx.classList.contains('auto')) abrirPilar((atual + 1) % ps.length);
+      });
+    });
+    if (!reduce && 'IntersectionObserver' in window) {
+      cx.classList.add('auto');
+      new IntersectionObserver(function (es) {
+        cx.classList.toggle('parado', !es[0].isIntersecting);
+      }, { threshold: 0.4 }).observe(cx);
+    }
+  })();
+
+  /* Act 6: Presencial / Online tabs (arrow keys move between them) */
+  (function () {
+    var abas = Array.prototype.slice.call(document.querySelectorAll('.abas [role="tab"]'));
+    function ir(i, foco) {
+      abas.forEach(function (a, k) {
+        var on = k === i;
+        a.setAttribute('aria-selected', String(on)); a.tabIndex = on ? 0 : -1;
+        document.getElementById(a.getAttribute('aria-controls')).hidden = !on;
+      });
+      if (foco) abas[i].focus();
+    }
+    abas.forEach(function (a, i) {
+      a.addEventListener('click', function () { ir(i); });
+      a.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { e.preventDefault(); ir((i + (e.key === 'ArrowRight' ? 1 : abas.length - 1)) % abas.length, true); }
+      });
+    });
+  })();
 
   /* Act 7: breathe with me (4 in, 4 hold, 6 out, three times) */
   var botao = document.querySelector('[data-respira]');
