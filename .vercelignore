@@ -1,0 +1,7 @@
+# Working files that should not be published
+README.md
+scrollcraft/FINGERPRINTS.md
+scrollcraft/builds/*/BRIEF.md
+scrollcraft/builds/*/build.py
+scrollcraft/builds/*/index.src.html
+scrollcraft/builds/*/assets/flor-paths.svg
