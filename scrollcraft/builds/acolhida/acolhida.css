@@ -362,3 +362,11 @@ main, .rodape { position: relative; z-index: 1; }
 }
 @media (prefers-reduced-motion: reduce) { .figurinha svg { animation: none !important; } }
 .mapa[hidden] { display: none; }
+
+/* Tall desktop screens: the opening grows with the viewport instead of leaving empty bands */
+@media (min-width: 861px) and (min-height: 860px) {
+  .abertura__palco { width: min(1240px, 100% - 40px); }
+  .abertura h1 { font-size: clamp(3rem, min(7.4vw, 12svh), 7rem); }
+  .abertura__cena { width: min(100%, max(400px, 58svh)); }
+  .lead { font-size: clamp(1.15rem, 2.1svh, 1.5rem); }
+}
