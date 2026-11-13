@@ -25,14 +25,15 @@ html.lenis, html.lenis body { height: auto; }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { background: var(--canvas); scroll-padding-top: 76px; }
-body { font-family: var(--font-text); color: var(--ink); line-height: 1.65; font-size: 1.0625rem; -webkit-font-smoothing: antialiased; overflow-x: clip; }
+body { font-family: var(--font-text); color: var(--ink); line-height: 1.65; font-size: 1.0625rem; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; overflow-x: clip; }
 img { display: block; max-width: 100%; height: auto; }
-a { color: inherit; }
+a { color: inherit; text-decoration-thickness: from-font; }
 ul, ol { list-style: none; }
-h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.08; color: var(--ameixa); letter-spacing: -.01em; }
-h1 { font-size: clamp(3rem, 7.4vw, 6.2rem); }
+p, li, dd { text-wrap: pretty; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.15; color: var(--ameixa); letter-spacing: -.01em; text-wrap: balance; }
+h1 { font-size: clamp(3rem, 7.4vw, 6.2rem); line-height: 1.1; }
 h2 { font-size: clamp(2.2rem, 4.6vw, 3.8rem); }
-h3 { font-size: 1.45rem; line-height: 1.2; }
+h3 { font-size: 1.45rem; line-height: 1.25; }
 em { font-style: italic; }
 p + p { margin-top: 1rem; }
 :focus-visible { outline: 3px solid var(--ameixa-2); outline-offset: 3px; border-radius: 6px; }
@@ -139,7 +140,7 @@ main, .rodape { position: relative; z-index: 1; }
 .nome .pin { width: min(1140px, 100% - 40px); margin-inline: auto; }
 .nome__titulo { font-size: clamp(2.4rem, 5.6vw, 4.8rem); max-width: 14ch; }
 .nome__titulo em { color: var(--ameixa-2); }
-.nome__palavras { display: flex; flex-wrap: wrap; gap: .1em .5em; margin-top: 2.2rem; font-family: var(--font-display); font-size: clamp(1.9rem, 4vw, 3.4rem); line-height: 1.15; justify-content: flex-end; max-width: 980px; margin-left: auto; text-align: right; }
+.nome__palavras { font-weight: 500; display: flex; flex-wrap: wrap; gap: .1em .5em; margin-top: 2.2rem; font-family: var(--font-display); font-size: clamp(1.9rem, 4vw, 3.4rem); line-height: 1.15; justify-content: flex-end; max-width: 980px; margin-left: auto; text-align: right; }
 /* Words follow the scroll continuously: --v arrives (0..1), --d settles back after its turn.
    Only opacity and transform move, so the line never re-wraps. */
 .nome__palavras li { color: var(--ameixa); opacity: calc(.14 + var(--v, 0) * .86 - var(--d, 0) * .48); transform: translate3d(0, calc((1 - var(--v, 0)) * .35em), 0) scale(calc(.97 + (var(--v, 0) - var(--d, 0)) * .03)); transform-origin: 50% 80%; will-change: transform, opacity; }
@@ -172,7 +173,7 @@ main, .rodape { position: relative; z-index: 1; }
 .lilas__ano { font-weight: 700; letter-spacing: .18em; text-transform: uppercase; font-size: .82rem; color: #e7c9e4; opacity: calc(var(--t, 0)); }
 .lilas__titulo { color: #fff; font-size: clamp(4rem, 15vw, 13rem); line-height: .92; margin: .6rem 0 2.6rem; opacity: var(--t, 0); transform: translate3d(0, calc((1 - var(--t, 0)) * 60px), 0) scale(calc(.94 + var(--t, 0) * .06)); transform-origin: left bottom; }
 .lilas__linhas { max-width: 40rem; margin-left: auto; }
-.lilas__linhas p { font-family: var(--font-display); font-size: clamp(1.45rem, 2.4vw, 2.1rem); line-height: 1.3; color: #fff; opacity: .12; transform: translate3d(0, 22px, 0); transition: opacity 1.1s var(--ease-out), transform 1.3s var(--ease-out); }
+.lilas__linhas p { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.45rem, 2.4vw, 2.1rem); line-height: 1.3; color: #fff; opacity: .12; transform: translate3d(0, 22px, 0); transition: opacity 1.1s var(--ease-out), transform 1.3s var(--ease-out); }
 .lilas__linhas p.vista { opacity: 1; transform: none; }
 .lilas__linhas em { color: #f0cdec; }
 
@@ -228,7 +229,7 @@ main, .rodape { position: relative; z-index: 1; }
 .convite__texto p { color: var(--ink-soft); max-width: 30em; }
 .convite h2 { margin-bottom: 1.2rem; }
 .respira { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin: 1.6rem 0 1.8rem; }
-.respira__fala { margin: 0 !important; font-family: var(--font-display); font-style: italic; font-size: 1.5rem; color: var(--ameixa) !important; min-height: 1.6em; }
+.respira__fala { margin: 0 !important; font-family: var(--font-display); font-weight: 500; font-style: italic; font-size: 1.5rem; color: var(--ameixa) !important; min-height: 1.6em; }
 .respira__fala.troca { animation: surgir .9s var(--ease-out) both; }
 .convite__contatos { margin-top: 1.8rem; display: grid; gap: .4rem; }
 .convite__contatos a { color: var(--ameixa); font-weight: 600; text-underline-offset: 4px; }
@@ -236,6 +237,9 @@ main, .rodape { position: relative; z-index: 1; }
 
 .rodape { padding: 2rem clamp(20px, 4vw, 48px) 2.4rem; background: var(--lilas-noite); color: #e8d7e6; font-size: .9rem; display: grid; gap: .4rem; }
 .rodape a { color: #fff; }
+.rodape p { max-width: 64ch; }
+.horarios { font-variant-numeric: tabular-nums; }
+.convite__contatos a[data-wa] { white-space: nowrap; }
 
 /* No-JS: static, complete */
 .no-js .emblema { display: none; }
