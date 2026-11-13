@@ -74,11 +74,10 @@
         </div>
 
         <figure class="hero__foto">
-          <!-- Quando a foto principal for escolhida, descomente a linha abaixo e remova .foto--vazia -->
-          <!-- <img src="assets/img/luciana-hero.webp" alt="Luciana Ferreira, psicóloga clínica, sentada em seu consultório" width="800" height="1000"> -->
-          <div class="foto--vazia" role="img" aria-label="Espaço reservado para a foto da psicóloga">
-            <img src="assets/img/logo-claro.png" alt="" width="260" height="235">
-          </div>
+          <img src="assets/img/luciana-hero-800.webp"
+               srcset="assets/img/luciana-hero-480.webp 480w, assets/img/luciana-hero-800.webp 800w"
+               sizes="(max-width: 920px) 380px, 440px"
+               alt="Luciana Ferreira, psicóloga clínica, sorrindo em seu consultório" width="800" height="1000" fetchpriority="high">
           <figcaption class="selo"><strong>CRP 05/79.059</strong><span>Psicóloga clínica</span></figcaption>
         </figure>
       </div>
