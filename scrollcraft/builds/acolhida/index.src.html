@@ -185,30 +185,33 @@
       </div>
     </section>
 
-    <!-- ACT 6 · Como e onde · timeline + one place card -->
-    <section class="ato como" id="como" data-ato>
-      <div class="wrap como__in">
-        <header class="como__cab">
-          <div>
+    <!-- ACT 6 · Atendimento · pinned: the steps advance with the scroll -->
+    <section class="ato como" id="como" data-ato data-pin>
+      <div class="pin">
+        <div class="wrap como__in">
+          <div class="como__txt">
             <h2>Como começa.</h2>
-            <p>Sem pressa e sem formulário: o primeiro passo é uma conversa.</p>
+            <p class="como__sub">Sem pressa e sem formulário: o primeiro passo é uma conversa.</p>
+            <div class="como__passos">
+              <ol>
+                <li data-passo><h3>Primeiro contato</h3><p>Você me chama pelo WhatsApp e combinamos o melhor horário.</p></li>
+                <li data-passo><h3>Acolhimento inicial</h3><p>Conversamos sobre o que você está vivendo e o que espera, sem pressa.</p></li>
+                <li data-passo><h3>Plano individualizado</h3><p>Definimos juntas o caminho, com ou sem recursos complementares.</p></li>
+                <li data-passo><h3>Acompanhamento</h3><p>Encontros regulares para desenvolver autonomia e bem-estar.</p></li>
+              </ol>
+            </div>
           </div>
           <figure class="como__sala">
             <img src="assets/consultorio-brinquedos-800.webp" srcset="assets/consultorio-brinquedos-480.webp 480w, assets/consultorio-brinquedos-800.webp 800w"
-                 sizes="(max-width: 860px) 92vw, 560px" width="800" height="1000" loading="lazy"
+                 sizes="(max-width: 860px) 92vw, 460px" width="800" height="1000" loading="lazy"
                  alt="Luciana na sala de atendimento, com janela ampla e cantinho de brinquedos para crianças">
           </figure>
-        </header>
-
-        <div class="como__passos">
-          <ol>
-            <li data-passo><h3>Primeiro contato</h3><p>Você me chama pelo WhatsApp e combinamos o melhor horário.</p></li>
-            <li data-passo><h3>Acolhimento inicial</h3><p>Conversamos sobre o que você está vivendo e o que espera, sem pressa.</p></li>
-            <li data-passo><h3>Plano individualizado</h3><p>Definimos juntas o caminho, com ou sem recursos complementares.</p></li>
-            <li data-passo><h3>Acompanhamento</h3><p>Encontros regulares para desenvolver autonomia e bem-estar.</p></li>
-          </ol>
         </div>
+      </div>
+    </section>
 
+    <section class="ato local" id="local" data-ato>
+      <div class="wrap">
         <div class="como__local">
           <div class="ficha">
             <div class="abas" role="tablist" aria-label="Modalidade de atendimento">
@@ -222,7 +225,10 @@
                 <li><span>Sexta</span> 14h às 20h</li>
               </ul>
               <p class="endereco">Copsico, Dimension Office &amp; Park<br>Av. Embaixador Abelardo Bueno, 1, Bloco Lagoa 2, sala 210<br>Barra da Tijuca, Rio de Janeiro, RJ</p>
-              <a class="link" target="_blank" rel="noopener" href="https://www.google.com/maps/place/Dimension+Office+%26+Park/@-22.9742251,-43.3655189,17z">Abrir no Google Maps</a>
+              <div class="acoes">
+                <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&amp;destination=Dimension+Office+%26+Park%2C+Barra+da+Tijuca%2C+Rio+de+Janeiro"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12 20 4l-8 16-2-6-6-2Z"/></svg>Ver rota</a>
+                <a class="btn btn--leve" target="_blank" rel="noopener" href="https://www.google.com/maps/place/Dimension+Office+%26+Park/@-22.9742251,-43.3655189,17z/data=!4m6!3m5!1s0x9bd91c1ed9d377:0x2799aa65f923454e!8m2!3d-22.9742251!4d-43.3655189"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Abrir no Google Maps</a>
+              </div>
             </div>
             <div class="painel" role="tabpanel" id="painel-online" aria-labelledby="aba-online" hidden>
               <p class="painel__destaque">Horários a combinar.</p>
@@ -233,6 +239,37 @@
           <iframe class="mapa" title="Mapa do consultório no Dimension Office &amp; Park, Barra da Tijuca" loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
             src="https://www.google.com/maps?q=-22.9742251,-43.3655189&amp;z=16&amp;output=embed"></iframe>
+          <div class="figurinha" hidden>
+            <svg viewBox="0 0 420 380" role="img" aria-label="Figurinha de uma chamada de vídeo entre psicóloga e paciente, com a legenda Sessão online">
+              <defs><filter id="fig-sombra" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#4a1f48" flood-opacity=".28"/></filter></defs>
+              <g filter="url(#fig-sombra)">
+                <rect x="20" y="20" width="380" height="320" rx="36" fill="#fff"/>
+                <rect x="110" y="318" width="200" height="44" rx="22" fill="#fff"/>
+              </g>
+              <rect x="36" y="36" width="348" height="288" rx="26" fill="#fefcf7" stroke="#ebddea" stroke-width="2"/>
+              <circle cx="62" cy="58" r="5" fill="#b17aad"/><circle cx="80" cy="58" r="5" fill="#f3e0c4"/><circle cx="98" cy="58" r="5" fill="#ebddea"/>
+              <rect x="52" y="80" width="200" height="170" rx="18" fill="#f3e0c4"/>
+              <path d="M92 250c0-52 120-52 120 0Z" fill="#6d2c6b"/>
+              <path d="M120 156c-6 34 0 46 4 52l10-6c-6-20-4-36-2-42Zm64 0c6 34 0 46-4 52l-10-6c6-20 4-36 2-42Z" fill="#4a1f48"/>
+              <circle cx="152" cy="160" r="29" fill="#f1c9a5"/>
+              <path d="M120 156a32 32 0 0 1 64 0c-10-14-22-16-32-16s-22 2-32 16Z" fill="#4a1f48"/>
+              <circle cx="142" cy="160" r="2.5" fill="#4a1f48"/><circle cx="162" cy="160" r="2.5" fill="#4a1f48"/>
+              <path d="M142 171q10 9 20 0" fill="none" stroke="#6d2c6b" stroke-width="2.5" stroke-linecap="round"/>
+              <rect x="264" y="80" width="104" height="80" rx="16" fill="#ebddea"/>
+              <circle cx="316" cy="116" r="14" fill="#f1c9a5"/>
+              <path d="M290 160c0-26 52-26 52 0Z" fill="#b17aad"/>
+              <path d="M300 112c0-12 32-12 32 0-8-6-24-6-32 0Z" fill="#894686"/>
+              <rect x="264" y="170" width="104" height="80" rx="16" fill="#6d2c6b"/>
+              <path d="M316 228C296 214 296 198 308 196c5-.5 8 3 8 6 0-3 3-6.500 8-6 12 2 12 18-8 32Z" fill="#faf4e9"/>
+              <g filter="url(#fig-sombra)"><rect x="170" y="66" width="76" height="38" rx="19" fill="#fff"/><path d="M190 100l-6 14 18-12Z" fill="#fff"/></g>
+              <path d="M208 96c-10-7-10-15-4-16 2.500-.3 4 1.500 4 3 0-1.500 1.500-3.300 4-3 6 1 6 9-4 16Z" fill="#6d2c6b"/>
+              <circle cx="150" cy="284" r="18" fill="#ebddea"/><rect x="145" y="275" width="10" height="15" rx="5" fill="none" stroke="#6d2c6b" stroke-width="2.500"/>
+              <circle cx="210" cy="284" r="18" fill="#ebddea"/><rect x="201" y="278" width="14" height="12" rx="3" fill="#6d2c6b"/><path d="M217 282l7-4v12l-7-4Z" fill="#6d2c6b"/>
+              <circle cx="270" cy="284" r="18" fill="#c0506a"/><path d="M261 287q9-7 18 0" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+              <rect x="110" y="318" width="200" height="44" rx="22" fill="#6d2c6b" stroke="#fff" stroke-width="6"/>
+              <text x="210" y="346" text-anchor="middle" fill="#fff" font-size="20" font-weight="700" style="font-family:var(--font-text)">Sessão online</text>
+            </svg>
+          </div>
         </div>
       </div>
     </section>
@@ -253,9 +290,9 @@
           </div>
           <a class="btn btn--grande" data-wa href="#convite">Conversar pelo WhatsApp</a>
           <ul class="convite__contatos">
-            <li><a data-wa href="#convite">(21) 96641-0350</a></li>
-            <li><a href="mailto:lu.lucianaalves@gmail.com">lu.lucianaalves@gmail.com</a></li>
-            <li><a href="https://www.instagram.com/luciana.afs/" target="_blank" rel="noopener">Instagram @luciana.afs</a></li>
+            <li><a data-wa href="#convite"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21l1.6-4.7A8.5 8.5 0 1 1 8 19.5L3 21Z"/><path d="M9 8.5c0 3.5 3 6.5 6.500 6.500l1-1.600-2-1-.9.800c-1-.4-2-1.300-2.400-2.400l.8-.9-1-2L9 8.500Z"/></svg>(21) 96641-0350</a></li>
+            <li><a href="mailto:lu.lucianaalves@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.500 7 8.500 6.500L20.500 7"/></svg>lu.lucianaalves@gmail.com</a></li>
+            <li><a href="https://www.instagram.com/luciana.afs/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.500" y="3.500" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.200" cy="6.800" r=".8" fill="currentColor"/></svg>Instagram @luciana.afs</a></li>
           </ul>
           <p class="crise"><strong>Em crise agora?</strong> Ligue para o CVV&nbsp;188 (24h, gratuito) ou SAMU&nbsp;192.</p>
         </div>

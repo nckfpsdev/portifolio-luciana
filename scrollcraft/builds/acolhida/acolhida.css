@@ -219,24 +219,25 @@ main, .rodape { position: relative; z-index: 1; }
 .neuro__aviso { flex: 0 0 300px; align-self: center; font-size: .95rem; color: var(--ink-soft); border-left: 3px solid var(--lilas); padding-left: 1.1rem; }
 
 /* ACT 6: Como e onde, timeline + place card */
-.como { padding: clamp(60px, 10vw, 140px) 0; }
-.como__in { display: grid; gap: clamp(2.4rem, 5vw, 4rem); }
-.como__cab { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(24px, 5vw, 72px); align-items: end; }
-.como__cab p { color: var(--ink-soft); margin-top: 1rem; max-width: 24em; font-size: 1.15rem; }
-.como__sala { border-radius: var(--raio); overflow: hidden; box-shadow: var(--sombra); }
-.como__sala img { aspect-ratio: 16 / 9; object-fit: cover; object-position: 50% 66%; width: 100%; }
-.como__passos ol { position: relative; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.6rem; padding-top: 3.2rem; }
-.como__passos ol::before, .como__passos ol::after { content: ""; position: absolute; left: 18px; right: 0; top: 17px; height: 2px; }
+.como { height: 320svh; }
+.como .pin { align-content: center; }
+.como__in { display: grid; grid-template-columns: 1.15fr .85fr; gap: clamp(28px, 6vw, 88px); align-items: center; }
+.como__sub { color: var(--ink-soft); margin-top: .8rem; max-width: 26em; font-size: 1.1rem; }
+.como__sala { border-radius: var(--raio); overflow: hidden; box-shadow: var(--sombra); max-height: 72svh; }
+.como__sala img { aspect-ratio: 4 / 5; max-height: 72svh; object-fit: cover; object-position: 50% 60%; width: 100%; }
+.como__passos { margin-top: clamp(1.4rem, 3.5svh, 2.4rem); }
+.como__passos ol { position: relative; display: grid; gap: clamp(.7rem, 2.4svh, 1.5rem); counter-reset: passo; margin-left: 18px; padding-left: 2.6rem; }
+.como__passos ol::before, .como__passos ol::after { content: ""; position: absolute; left: -1px; top: 18px; bottom: 18px; width: 2px; }
 .como__passos ol::before { background: var(--lilas-claro); }
-.como__passos ol::after { background: var(--ameixa); transform: scaleX(var(--fio, 0)); transform-origin: left; }
-.como__passos li { position: relative; z-index: 1; counter-increment: passo; }
-.como__passos ol { counter-reset: passo; }
-.como__passos li::before { content: counter(passo); position: absolute; left: 0; top: -3.2rem; z-index: 1; width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; font-weight: 700; font-size: .9rem; background: var(--canvas); color: var(--ameixa); border: 2px solid var(--lilas-claro); transition: background-color .6s ease, color .6s ease, border-color .6s ease, transform .8s var(--ease-out); }
-.como__passos li:nth-child(2)::before { transition-delay: .2s; } .como__passos li:nth-child(3)::before { transition-delay: .4s; } .como__passos li:nth-child(4)::before { transition-delay: .6s; }
-.como__passos li.on::before { background: var(--ameixa); color: #fff; border-color: var(--ameixa); transform: scale(1.08); }
-.como__passos li h3 { margin-bottom: .4rem; }
-.como__passos li p { color: var(--ink-soft); font-size: .98rem; }
+.como__passos ol::after { background: var(--ameixa); transform: scaleY(var(--fio, 1)); transform-origin: top; }
+.como__passos li { position: relative; counter-increment: passo; }
+.como__passos li::before { content: counter(passo); position: absolute; left: calc(-2.6rem - 18px); top: -4px; z-index: 1; width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; font-weight: 700; font-size: .9rem; background: var(--canvas); color: var(--ameixa); border: 2px solid var(--lilas-claro); transition: background-color .5s ease, color .5s ease, border-color .5s ease, transform .6s var(--ease-out); }
+.como__passos li.on::before { background: var(--ameixa); color: #fff; border-color: var(--ameixa); }
+.como__passos li.atual::before { transform: scale(1.14); box-shadow: 0 0 0 6px var(--lilas-claro); }
+.como__passos li h3 { margin-bottom: .2rem; opacity: calc(.42 + var(--s, 1) * .58); transition: color .4s ease; }
+.como__passos li p { color: var(--ink-soft); font-size: .98rem; max-width: 30em; opacity: var(--s, 1); transform: translate3d(0, calc((1 - var(--s, 1)) * 10px), 0); max-height: calc(var(--s, 1) * 6em); overflow: hidden; }
 
+.local { padding: clamp(40px, 7vw, 100px) 0 clamp(60px, 10vw, 140px); }
 .como__local { display: grid; grid-template-columns: 1fr 1fr; background: var(--surface); border-radius: var(--raio); box-shadow: var(--sombra); overflow: hidden; }
 .ficha { padding: clamp(1.4rem, 3vw, 2.4rem); display: flex; flex-direction: column; gap: 1.4rem; }
 .ficha p { color: var(--ink-soft); font-size: .98rem; }
@@ -285,7 +286,6 @@ main, .rodape { position: relative; z-index: 1; }
 .no-js .nome { height: auto; } .no-js .nome .pin, .no-js .lilas .pin, .no-js .neuro .pin { position: static; height: auto; padding: 100px 0; }
 .no-js .lilas { height: auto; background: var(--lilas-noite); } .no-js .neuro { height: auto; }
 .no-js .nome__palavras li, .no-js .lilas__linhas p, .no-js .nome__fecho { opacity: 1; transform: none; }
-.no-js .como__passos ol::after { display: none; }
 .no-js .lilas__titulo, .no-js .lilas__ano { opacity: 1; transform: none; }
 .no-js .neuro__trilho { width: auto; overflow-x: auto; }
 .no-js .quem__foto { clip-path: none; } .no-js .quem__foto img { transform: none; }
@@ -309,13 +309,7 @@ main, .rodape { position: relative; z-index: 1; }
   .nome { height: 200svh; }
   .nome .pin { width: calc(100% - 32px); }
   .nome__palavras { justify-content: flex-start; text-align: left; }
-  .lista__in, .quem__in, .convite__in, .neuro__cab, .como__cab, .como__local { grid-template-columns: 1fr; }
-  .como__sala img { aspect-ratio: 16 / 10; }
-  .como__passos ol { grid-template-columns: 1fr; gap: 0; padding-top: 0; border-left: 2px solid var(--lilas-claro); }
-  .como__passos ol::before { display: none; }
-  .como__passos ol::after { left: -2px; right: auto; top: 0; bottom: 0; width: 2px; height: auto; transform: scaleY(var(--fio, 0)); transform-origin: top; }
-  .como__passos li { padding: 0 0 2rem 2.4rem; }
-  .como__passos li::before { left: -19px; top: -2px; }
+  .lista__in, .quem__in, .convite__in, .neuro__cab, .como__local { grid-template-columns: 1fr; }
   .mapa { min-height: 280px; }
   .lista__itens { grid-template-columns: 1fr; }
   .lista__apoio { grid-column: 1; }
@@ -337,7 +331,6 @@ main, .rodape { position: relative; z-index: 1; }
   .abertura__atmos span, .abertura__flor, .abertura__arco, .abertura__ramo, .selo { transform: none !important; }
   .nome__palavras li, .lilas__linhas p, .nome__fecho { opacity: 1 !important; transform: none !important; }
   .quem__foto { clip-path: none; } .quem__foto img { transform: none; }
-  .como__passos ol::after { transform: none; }
 }
 
 /* Reduced motion (set by JS): native horizontal scroll instead of scroll-linked pan */
@@ -346,3 +339,26 @@ main, .rodape { position: relative; z-index: 1; }
 .estatico .neuro__trilho { width: auto; transform: none; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 1rem; }
 .estatico .neuro__trilho > * { scroll-snap-align: start; }
 
+
+/* Local: route buttons, contact icons, online sticker */
+.acoes { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: .4rem; }
+.acoes .btn { display: inline-flex; align-items: center; gap: .5rem; }
+.acoes svg, .convite__contatos svg { width: 1.15em; height: 1.15em; flex: none; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.convite__contatos a { display: inline-flex; align-items: center; gap: .6rem; }
+.convite__contatos svg { width: 1.3em; height: 1.3em; }
+.figurinha { display: grid; place-items: center; padding: clamp(1.2rem, 3vw, 2.4rem); min-height: 380px; background: radial-gradient(ellipse at 50% 40%, var(--champanhe), var(--lilas-claro) 75%); animation: surgir .7s var(--ease-out) both; }
+.figurinha[hidden] { display: none; }
+.figurinha svg { width: min(100%, 420px); height: auto; transform: rotate(-3deg); animation: flutua 6s ease-in-out infinite; }
+@keyframes flutua { 0%, 100% { transform: rotate(-3deg) translateY(0); } 50% { transform: rotate(-1.5deg) translateY(-8px); } }
+.no-js .como, .estatico .como { height: auto; padding: 80px 0; }
+.no-js .como .pin, .estatico .como .pin { position: static; height: auto; }
+@media (max-width: 860px) {
+  .como { height: 300svh; }
+  .como__in { grid-template-columns: 1fr; }
+  .como__sala { display: none; }
+  .como__sub { font-size: 1rem; }
+  .como__passos li p { font-size: .92rem; }
+  .figurinha { min-height: 300px; }
+}
+@media (prefers-reduced-motion: reduce) { .figurinha svg { animation: none !important; } }
+.mapa[hidden] { display: none; }

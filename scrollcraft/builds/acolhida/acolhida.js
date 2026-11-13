@@ -94,12 +94,12 @@
   /* Scroll reveals: content rises into place as each chapter arrives */
   var revelar = [];
   if (!reduce && 'IntersectionObserver' in window) {
-    document.querySelectorAll('.lista h2, .quem h2, .neuro__cab h2, .como__cab h2, .convite h2, .nome__titulo').forEach(function (h) {
+    document.querySelectorAll('.lista h2, .quem h2, .neuro__cab h2, .como__txt h2, .convite h2, .nome__titulo').forEach(function (h) {
       partir(h); revelar.push(h);
     });
     /* (the portrait has its own curtain and the flower is drawn, so neither is in this list) */
     var grupos = ['.lista__itens li', '.lista__apoio', '.quem__texto > p', '.quem__fichas > div',
-      '.pilar', '.neuro__cab > p', '.como__passos li', '.como__cab > div > p', '.como__sala', '.como__local',
+      '.pilar', '.neuro__cab > p', '.como__sub', '.como__local',
       '.convite__texto > p', '.respira', '.convite__texto > .btn', '.convite__contatos li'];
     grupos.forEach(function (sel) {
       var porPai = new Map();
@@ -122,7 +122,7 @@
   var $ = function (s) { return document.querySelector(s); };
   var abertura = $('#abertura'), nome = $('#nome'), quem = $('#quem'), lilas = $('#lilas'),
       neuro = $('#neuro'), convite = $('#convite'), emblema = $('.emblema'), trilho = $('.neuro__trilho'),
-      fundo = $('.lilas-fundo'), fio = $('.como__passos ol');
+      fundo = $('.lilas-fundo'), fio = $('.como__passos ol'), como = $('#como'), passos = Array.prototype.slice.call(document.querySelectorAll('[data-passo]'));
   var palavras = Array.prototype.slice.call(nome.querySelectorAll('.nome__palavras li'));
   var fecho = nome.querySelector('.nome__fecho');
   var linhas = Array.prototype.slice.call(lilas.querySelectorAll('[data-linha]'));
@@ -130,7 +130,7 @@
 
   /* Layout is measured once (and on resize), never inside the scroll frame */
   var medidas = new Map(), vh = window.innerHeight, distancia = 0, sujo = true;
-  var vigiados = [abertura, nome, quem, lilas, neuro, convite, fio].concat(atos);
+  var vigiados = [abertura, nome, quem, lilas, neuro, convite, fio, como].concat(atos);
   function medir() {
     var y = window.scrollY;
     vigiados.forEach(function (el) {
@@ -192,11 +192,18 @@
       por(trilho, '--x', '0px'); por(trilho, '--px', '0');
     }
 
-    /* Act 6: the thread between the steps fills as you read down */
-    var mF = medidas.get(fio);
-    por(fio, '--fio', reduce ? '1' : (mobile
-      ? clamp((vh * 0.62 - (mF.top - y)) / Math.max(1, mF.h))
-      : clamp((vh * 0.8 - (mF.top - y)) / (vh * 0.4))).toFixed(4));
+    /* Act 6: pinned; each step arrives in turn and shows what it does */
+    var pC = progresso(como, 'pin', y), atual = -1;
+    passos.forEach(function (li, i) {
+      var s = reduce ? 1 : clamp((pC - (0.08 + i * 0.2)) / 0.12);
+      por(li, '--s', s.toFixed(3));
+      if (s > 0.5) atual = i;
+    });
+    passos.forEach(function (li, i) {
+      li.classList.toggle('on', reduce || i <= atual);
+      li.classList.toggle('atual', !reduce && i === atual);
+    });
+    por(fio, '--fio', reduce ? '1' : clamp((pC - 0.08) / 0.62).toFixed(4));
 
     /* Signature: the emblem is drawn by the whole journey, completes at the invitation */
     var topC = medidas.get(convite).top - y;
@@ -237,15 +244,6 @@
   quadro(window.scrollY, performance.now());
   requestAnimationFrame(loop);
 
-  /* Act 6: steps light up in order */
-  var passos = document.querySelectorAll('[data-passo]');
-  if ('IntersectionObserver' in window && !reduce) {
-    var io = new IntersectionObserver(function (es) {
-      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } });
-    }, { rootMargin: '0px 0px -38% 0px' });
-    passos.forEach(function (p) { io.observe(p); });
-  } else { passos.forEach(function (p) { p.classList.add('on'); }); }
-
   /* Act 3: the care points open one at a time; the line fills, then the next opens. A click takes over. */
   (function () {
     var cx = document.querySelector('.pilares'); if (!cx) return;
@@ -284,6 +282,8 @@
         a.setAttribute('aria-selected', String(on)); a.tabIndex = on ? 0 : -1;
         document.getElementById(a.getAttribute('aria-controls')).hidden = !on;
       });
+      document.querySelector('.mapa').hidden = i === 1;
+      document.querySelector('.figurinha').hidden = i !== 1;
       if (foco) abas[i].focus();
     }
     abas.forEach(function (a, i) {
