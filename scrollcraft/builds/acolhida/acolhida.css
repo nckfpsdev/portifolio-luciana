@@ -1,7 +1,7 @@
 /* Tokens */
 :root {
-  --canvas: #fbf7f4;          /* warm cream, late-afternoon linen */
-  --surface: #ffffff;
+  --canvas: #faf4e9;          /* vanilla cream page, oklch(.969 .016 83) */
+  --surface: #fefcf7;         /* ivory cards, a step lighter than the page */
   --ink: #2f1b2e;
   --ink-soft: #6b5869;
   --ameixa: #6d2c6b;
@@ -9,7 +9,7 @@
   --lilas: #b17aad;
   --lilas-claro: #ebddea;
   --lilas-noite: #4a1f48;
-  --pessego: #f3d9cc;
+  --champanhe: #f3e0c4;       /* warm light pool beside the lilac, oklch(.915 .043 78) */
   --font-display: "Cormorant Garamond", Georgia, serif;
   --font-text: "Nunito Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   --raio: 22px;
@@ -88,7 +88,7 @@ main, .rodape { position: relative; z-index: 1; }
 /* soft light pools: radial gradients instead of a live blur filter, so moving them costs nothing */
 .abertura__atmos span { position: absolute; border-radius: 50%; opacity: .8; will-change: transform; }
 .abertura__atmos span:nth-child(1) { width: 62vw; height: 62vw; right: -17vw; top: -19vw; background: radial-gradient(closest-side, var(--lilas-claro) 0%, color-mix(in srgb, var(--lilas-claro) 60%, transparent) 55%, transparent 100%); transform: translate3d(0, calc(var(--p, 0) * -120px), 0); }
-.abertura__atmos span:nth-child(2) { width: 44vw; height: 44vw; left: -15vw; bottom: -15vw; background: radial-gradient(closest-side, var(--pessego) 0%, color-mix(in srgb, var(--pessego) 60%, transparent) 55%, transparent 100%); transform: translate3d(0, calc(var(--p, 0) * -60px), 0); }
+.abertura__atmos span:nth-child(2) { width: 44vw; height: 44vw; left: -15vw; bottom: -15vw; background: radial-gradient(closest-side, var(--champanhe) 0%, color-mix(in srgb, var(--champanhe) 60%, transparent) 55%, transparent 100%); transform: translate3d(0, calc(var(--p, 0) * -60px), 0); }
 .abertura__palco { position: relative; width: min(1140px, 100% - 40px); margin-inline: auto; display: grid; grid-template-columns: 1.08fr .92fr; gap: clamp(24px, 5vw, 72px); align-items: center; }
 .abertura__texto { position: relative; z-index: 3; }
 .abertura__cena { position: relative; justify-self: center; width: min(400px, 100%); }
