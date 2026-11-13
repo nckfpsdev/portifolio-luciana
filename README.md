@@ -3,7 +3,8 @@
 Site estático de página única (HTML, CSS e JS puros). Não precisa de build.
 
 ## Estrutura
-- `index.html`: conteúdo da página
+- `scrollcraft/builds/acolhida/`: **versão principal (raiz do site)**, em rolagem. Rebuild: `python3 scrollcraft/builds/acolhida/build.py`
+- `classico.html`: versão clássica, disponível em `/classico`
 - `politica-de-privacidade.html`: rascunho, revisar antes de publicar
 - `assets/css/style.css`: estilos e paleta (variáveis no topo)
 - `assets/js/main.js`: WhatsApp, Instagram e menu mobile
