@@ -6,6 +6,8 @@
   <title>Luciana Ferreira | Psicóloga Clínica na Barra da Tijuca</title>
   <meta name="description" content="Psicóloga clínica na Barra da Tijuca, Rio de Janeiro. Escuta acolhedora e cientificamente embasada, atendimento presencial e online. CRP 05/79.059.">
   <meta name="theme-color" content="#6D2C6B">
+  <!-- Before first paint: opt into the entrance choreography unless motion is reduced -->
+  <script>if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('anima');</script>
   <link rel="icon" href="assets/logo-ameixa.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,7 +46,7 @@
       <div class="abertura__palco">
         <div class="abertura__texto">
           <p class="eyebrow">Psicóloga clínica · Barra da Tijuca e online</p>
-          <h1>Sua busca pode terminar aqui.</h1>
+          <h1><span class="w"><span style="--j:0">Sua</span></span> <span class="w"><span style="--j:1">busca</span></span> <span class="w"><span style="--j:2">pode</span></span> <span class="w"><span style="--j:3">terminar</span></span> <span class="w"><span style="--j:4">aqui.</span></span></h1>
           <p class="lead">Cuidado e parceria para atravessar o que pesa, no seu tempo e do seu jeito.</p>
           <a class="btn" data-wa href="#convite">Agendar uma conversa</a>
         </div>
@@ -229,6 +231,7 @@
     <p>Este site segue o Código de Ética Profissional do Psicólogo e as normas de publicidade do Conselho Federal de Psicologia. <a href="/politica-de-privacidade">Política de privacidade</a></p>
   </footer>
 
+  <script src="vendor/lenis.min.js"></script>
   <script src="acolhida.js"></script>
 </body>
 </html>

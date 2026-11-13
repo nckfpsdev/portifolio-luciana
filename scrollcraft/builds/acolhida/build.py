@@ -12,7 +12,7 @@ PREFIX = "/scrollcraft/builds/acolhida/"
 here = pathlib.Path(__file__).parent
 paths = re.findall(r'<path d="[^"]+"/>', (here / "assets/flor-paths.svg").read_text())
 html = (here / "index.src.html").read_text().replace("__FLOR__", "".join(paths))
-html = re.sub(r'(?<=["\s,])assets/', PREFIX + "assets/", html)
+html = re.sub(r'(?<=["\s,])(assets|vendor)/', PREFIX + r"\1/", html)
 html = html.replace('"acolhida.css"', f'"{PREFIX}acolhida.css"').replace('"acolhida.js"', f'"{PREFIX}acolhida.js"')
 (here / "index.html").write_text(html)
 # The site root is this same page (absolute asset paths make it location independent)
