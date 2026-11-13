@@ -3,7 +3,7 @@
 Site estático de página única (HTML, CSS e JS puros). Não precisa de build.
 
 ## Estrutura
-- `scrollcraft/builds/acolhida/`: **versão principal (raiz do site)**, em rolagem. Rebuild: `python3 scrollcraft/builds/acolhida/build.py`
+- `index.html`: **versão principal (raiz do site)**, em rolagem. É gerada: edite `scrollcraft/builds/acolhida/` e rode `python3 scrollcraft/builds/acolhida/build.py`
 - `classico.html`: versão clássica, disponível em `/classico`
 - `politica-de-privacidade.html`: rascunho, revisar antes de publicar
 - `assets/css/style.css`: estilos e paleta (variáveis no topo)

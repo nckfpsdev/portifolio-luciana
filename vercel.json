@@ -45,11 +45,5 @@
         }
       ]
     }
-  ],
-  "rewrites": [
-    {
-      "source": "/",
-      "destination": "/scrollcraft/builds/acolhida/index.html"
-    }
   ]
 }
