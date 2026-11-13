@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="pt-BR" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Luciana Ferreira | Psicóloga Clínica na Barra da Tijuca</title>
+  <meta name="description" content="Psicóloga clínica na Barra da Tijuca, Rio de Janeiro. Escuta acolhedora e cientificamente embasada, atendimento presencial e online. CRP 05/79.059.">
+  <meta name="theme-color" content="#6D2C6B">
+  <link rel="icon" href="assets/logo-ameixa.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="acolhida.css">
+</head>
+<body>
+  <a class="skip" href="#conteudo">Ir para o conteúdo</a>
+
+  <!-- Paths of the flower-brain, vectorised from the client's own logo. Cloned by JS. -->
+  <template id="flor-tpl"><svg xmlns="http://www.w3.org/2000/svg">__FLOR__</svg></template>
+
+  <header class="nav">
+    <a class="nav__marca" href="#abertura">Luciana Ferreira <span>Psicóloga Clínica</span></a>
+    <nav class="nav__indice" aria-label="Capítulos">
+      <a href="#nome" data-cap="nome">Para quem</a>
+      <a href="#quem" data-cap="quem">Quem cuida</a>
+      <a href="#lilas" data-cap="lilas">Sala Lilás</a>
+      <a href="#neuro" data-cap="neuro">Neuromodulação</a>
+      <a href="#como" data-cap="como">Atendimento</a>
+    </nav>
+    <a class="nav__cta" data-wa href="#convite">Conversar <span class="sm-hide">pelo WhatsApp</span></a>
+  </header>
+
+  <!-- Signature: the emblem is drawn by the visitor's scroll and completes at the invitation -->
+  <div class="emblema" aria-hidden="true"><svg class="flor" data-flor="emblema" viewBox="0 0 1036 937"></svg></div>
+
+  <!-- Peak colour layer (Act 4) -->
+  <div class="lilas-fundo" aria-hidden="true"></div>
+
+  <main id="conteudo">
+
+    <!-- ACT 1 · Abertura · parallax layers -->
+    <section class="ato abertura" id="abertura" data-ato>
+      <div class="abertura__atmos" aria-hidden="true"><span></span><span></span></div>
+      <div class="abertura__palco">
+        <div class="abertura__texto">
+          <p class="eyebrow">Psicóloga clínica · Barra da Tijuca e online</p>
+          <h1>Sua busca pode terminar aqui.</h1>
+          <p class="lead">Cuidado e parceria para atravessar o que pesa, no seu tempo e do seu jeito.</p>
+          <a class="btn" data-wa href="#convite">Agendar uma conversa</a>
+        </div>
+        <div class="abertura__cena">
+          <svg class="flor abertura__flor" data-flor="abertura" viewBox="0 0 1036 937" aria-hidden="true"></svg>
+          <figure class="abertura__arco">
+            <img src="assets/luciana-hero-800.webp" srcset="assets/luciana-hero-480.webp 480w, assets/luciana-hero-800.webp 800w"
+                 sizes="(max-width: 860px) 72vw, 400px" width="800" height="1000" fetchpriority="high"
+                 alt="Luciana Ferreira sorrindo em seu consultório">
+          </figure>
+          <img class="abertura__ramo" src="assets/ramo.svg" alt="" width="220" height="300">
+          <p class="selo"><strong>CRP 05/79.059</strong> Psicóloga clínica</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACT 2 · Nome · pin + kinetic type -->
+    <section class="ato nome" id="nome" data-ato data-pin>
+      <div class="pin">
+        <h2 class="nome__titulo">Isso que você sente <em>tem nome</em>.</h2>
+        <ul class="nome__palavras" aria-label="Algumas demandas que acompanho">
+          <li>Ansiedade</li><li>Insônia</li><li>Síndrome do pânico</li><li>Burnout</li><li>Depressão</li>
+          <li>Traumas</li><li>Dependência emocional</li><li>Puerpério</li><li>Dor crônica</li>
+        </ul>
+        <p class="nome__fecho">E nenhum deles define quem você é.</p>
+      </div>
+    </section>
+
+    <section class="ato lista" aria-labelledby="lista-titulo">
+      <div class="wrap lista__in">
+        <h2 id="lista-titulo">Cuidado pensado especialmente para mulheres, em cada fase da vida.</h2>
+        <ul class="lista__itens">
+          <li>Ansiedade, estresse e insônia</li>
+          <li>Depressão, pânico e burnout</li>
+          <li>Traumas e ideação suicida</li>
+          <li>Gestação e puerpério</li>
+          <li>Relacionamentos abusivos e dependência emocional</li>
+          <li>Autoestima e autoconhecimento</li>
+          <li>Conflitos familiares e no trabalho</li>
+          <li>TDAH, autismo e outras neurodivergências</li>
+          <li>Fibromialgia e dores crônicas</li>
+        </ul>
+        <p class="lista__apoio">Também atendo crianças e adolescentes, e faço orientação parental.</p>
+      </div>
+    </section>
+
+    <!-- ACT 3 · Quem cuida · reveal -->
+    <section class="ato quem" id="quem" data-ato>
+      <div class="wrap quem__in">
+        <figure class="quem__foto">
+          <img src="assets/luciana-sobre-800.webp" srcset="assets/luciana-sobre-480.webp 480w, assets/luciana-sobre-800.webp 800w"
+               sizes="(max-width: 860px) 86vw, 440px" width="800" height="1000" loading="lazy"
+               alt="Luciana Ferreira, de jaleco branco, em seu consultório">
+        </figure>
+        <div class="quem__texto">
+          <h2>Prazer, sou a Luciana.</h2>
+          <p>Psicóloga clínica (CRP 05/79.059) e assistente social. Sou movida por compreender o comportamento humano, sobretudo em situações de crise, trauma e vulnerabilidade.</p>
+          <p>Na clínica, uno <strong>rigor científico e humanidade</strong>: Psicanálise, Terapias Comportamentais de 3ª Onda e Terapia Focada nas Emoções, com base em Psicopatologia, Suicidologia e Neurociências.</p>
+          <dl class="quem__fichas">
+            <div><dt>Graduações</dt><dd>Psicologia (UNISUAM) e Serviço Social (UERJ)</dd></div>
+            <div><dt>Pós-graduações</dt><dd>Psicanálise, Psicopedagogia, Suicidologia e Emergências em Saúde Mental, e atendimento a crianças e adolescentes vítimas de violência doméstica (PUC-Rio)</dd></div>
+            <div><dt>Formações</dt><dd>Terapia Focada nas Emoções, Teoria Polivagal, Trauma, TDAH e neuromodulação</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <div class="silencio" aria-hidden="true"></div>
+
+    <!-- ACT 4 · Sala Lilás · colour takeover (PEAK, longest span) -->
+    <section class="ato lilas" id="lilas" data-ato data-pin>
+      <div class="pin">
+        <p class="lilas__ano">Desde 2008</p>
+        <h2 class="lilas__titulo">Sala Lilás.</h2>
+        <div class="lilas__linhas">
+          <p data-linha>Sou Oficial de Saúde do Corpo de Bombeiros Militar do Estado do Rio de Janeiro, no suporte emocional e em emergências.</p>
+          <p data-linha>Na Sala Lilás, acolhi e acompanhei vítimas de violência doméstica.</p>
+          <p data-linha>Ali aprendi que acolher é, antes de tudo, <em>estar presente com segurança e respeito</em>.</p>
+          <p data-linha>É isso que levo para cada atendimento.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACT 5 · Neuromodulação · horizontal pan -->
+    <section class="ato neuro" id="neuro" data-ato data-pin>
+      <div class="pin">
+        <div class="neuro__cab">
+          <h2>Neuromodulação não invasiva, quando indicada.</h2>
+          <p>Recursos complementares à psicoterapia. A indicação é sempre individual e definida após avaliação clínica.</p>
+        </div>
+        <div class="neuro__trilho" tabindex="0" aria-label="Técnicas de neuromodulação">
+          <figure class="neuro__foto">
+            <img src="assets/neuromodulacao-foco-800.webp" srcset="assets/neuromodulacao-foco-480.webp 480w, assets/neuromodulacao-foco-800.webp 800w"
+                 sizes="320px" width="800" height="1000" loading="lazy"
+                 alt="Luciana ao lado do letreiro luminoso Neuromodulação em Foco">
+          </figure>
+          <article class="neuro__card">
+            <h3>Estimulação transcraniana por corrente contínua <span>(tDCS)</span></h3>
+            <p>Técnica não invasiva de modulação da atividade cerebral, usada como apoio em quadros emocionais.</p>
+          </article>
+          <article class="neuro__card">
+            <h3>Estimulação transcutânea do nervo vago</h3>
+            <p>Recurso de modulação autonômica que pode auxiliar na regulação emocional e do estresse.</p>
+          </article>
+          <article class="neuro__card">
+            <h3>Fotobiomodulação</h3>
+            <p>Uso de luz de baixa intensidade como recurso complementar ao acompanhamento.</p>
+          </article>
+          <p class="neuro__aviso">A neuromodulação não substitui a psicoterapia nem o acompanhamento médico, quando necessário. Os resultados variam de pessoa para pessoa.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACT 6 · Como e onde · progress stack -->
+    <section class="ato como" id="como" data-ato>
+      <div class="wrap como__in">
+        <div class="como__passos">
+          <h2>Como começa.</h2>
+          <ol>
+            <li data-passo><h3>Primeiro contato</h3><p>Você me chama pelo WhatsApp e combinamos o melhor horário.</p></li>
+            <li data-passo><h3>Acolhimento inicial</h3><p>Conversamos sobre o que você está vivendo e o que espera, sem pressa.</p></li>
+            <li data-passo><h3>Plano individualizado</h3><p>Definimos juntas o caminho, com ou sem recursos complementares.</p></li>
+            <li data-passo><h3>Acompanhamento</h3><p>Encontros regulares para desenvolver autonomia e bem-estar.</p></li>
+          </ol>
+        </div>
+        <div class="como__info">
+          <figure class="como__sala">
+            <img src="assets/consultorio-brinquedos-800.webp" srcset="assets/consultorio-brinquedos-480.webp 480w, assets/consultorio-brinquedos-800.webp 800w"
+                 sizes="(max-width: 860px) 86vw, 420px" width="800" height="1000" loading="lazy"
+                 alt="Luciana na sala de atendimento, com janela ampla e cantinho de brinquedos para crianças">
+          </figure>
+          <div class="ficha">
+            <h3>Presencial</h3>
+            <ul class="horarios">
+              <li><span>Terça</span> 9h às 20h30</li>
+              <li><span>Quinta</span> 14h às 20h</li>
+              <li><span>Sexta</span> 14h às 20h</li>
+            </ul>
+            <h3>Online</h3>
+            <p>Horários a combinar.</p>
+            <h3>Pagamento</h3>
+            <p>Sessões via Pix. Pacotes de neuromodulação podem ser parcelados no cartão de crédito, a combinar (taxas incluídas).</p>
+            <h3>Onde</h3>
+            <p>Copsico, Dimension Office &amp; Park<br>Av. Embaixador Abelardo Bueno, 1, Bloco Lagoa 2, sala 210<br>Barra da Tijuca, Rio de Janeiro, RJ</p>
+            <a class="link" target="_blank" rel="noopener" href="https://www.google.com/maps/place/Dimension+Office+%26+Park/@-22.9742251,-43.3655189,17z">Abrir no Google Maps</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACT 7 · Convite · interactive breathing, the flower completes -->
+    <section class="ato convite" id="convite" data-ato>
+      <div class="wrap convite__in">
+        <div class="convite__flor">
+          <svg class="flor" data-flor="convite" viewBox="0 0 1036 937" aria-hidden="true"></svg>
+          <img class="convite__flor-estatica" src="assets/flor.svg" alt="" width="1036" height="937">
+        </div>
+        <div class="convite__texto">
+          <h2>A busca pode terminar aqui.</h2>
+          <p>Se quiser, respire comigo antes de escrever. Depois, é só me chamar.</p>
+          <div class="respira">
+            <button type="button" class="btn btn--leve" data-respira>Respirar comigo</button>
+            <p class="respira__fala" aria-live="polite"></p>
+          </div>
+          <a class="btn btn--grande" data-wa href="#convite">Conversar pelo WhatsApp</a>
+          <ul class="convite__contatos">
+            <li><a data-wa href="#convite">(21) 96641-0350</a></li>
+            <li><a href="mailto:lu.lucianaalves@gmail.com">lu.lucianaalves@gmail.com</a></li>
+            <li><a href="https://www.instagram.com/luciana.afs/" target="_blank" rel="noopener">Instagram @luciana.afs</a></li>
+          </ul>
+          <p class="crise"><strong>Em crise agora?</strong> Ligue para o CVV 188 (24h, gratuito) ou SAMU 192.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <p><strong>Luciana Ferreira, Psicóloga Clínica</strong> · CRP 05/79.059 · Barra da Tijuca, Rio de Janeiro, RJ</p>
+    <p>Este site segue o Código de Ética Profissional do Psicólogo e as normas de publicidade do Conselho Federal de Psicologia. <a href="/politica-de-privacidade">Política de privacidade</a></p>
+  </footer>
+
+  <script src="acolhida.js"></script>
+</body>
+</html>
