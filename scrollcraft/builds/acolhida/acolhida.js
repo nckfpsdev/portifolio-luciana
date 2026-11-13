@@ -17,10 +17,34 @@
   }
 
   /* WhatsApp: one number, one first message */
-  var wa = 'https://wa.me/5521966410350?text=' + encodeURIComponent('Olá, Luciana! Gostaria de agendar uma conversa.');
+  var WA_BASE = 'https://wa.me/5521966410350?text=';
+  function waLink(msg) { return WA_BASE + encodeURIComponent(msg); }
   document.querySelectorAll('[data-wa]').forEach(function (a) {
-    a.href = wa; a.target = '_blank'; a.rel = 'noopener';
+    a.href = waLink(a.getAttribute('data-wa-msg') || 'Olá, Luciana! Gostaria de agendar uma conversa.');
+    a.target = '_blank'; a.rel = 'noopener';
   });
+
+  /* Phones (< 768px): short form -> WhatsApp with a ready message. Nothing is stored or sent to a server. */
+  (function () {
+    var form = document.getElementById('m-form'); if (!form) return;
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var f = form.elements, nome = f.nome.value.trim();
+      var modo = (form.querySelector('input[name="modalidade"]:checked') || {}).value || '';
+      var msg = 'Olá, Luciana! Meu nome é ' + nome + '. Gostaria de agendar uma conversa' +
+        (modo ? ' (atendimento ' + modo + ')' : '') + '.' +
+        (f.assunto.value ? ' Quero conversar sobre: ' + f.assunto.value.toLowerCase() + '.' : '');
+      var w = window.open(waLink(msg), '_blank', 'noopener');
+      if (!w) window.location.href = waLink(msg);
+    });
+  })();
+
+  /* Desktop engine (smooth scroll, pinned acts, drawn flower): only started from 768px up.
+     Below that the phone component set is shown and none of this runs. */
+  var mqDesk = window.matchMedia('(min-width: 768px)');
+  var desktopOn = false;
+  function iniciarDesktop() {
+    if (desktopOn) return; desktopOn = true;
 
   /* Smooth wheel scrolling. Touch keeps the phone's own native momentum. */
   var lenis = null;
@@ -323,4 +347,7 @@
       setTimeout(proxima, f[1]);
     })();
   });
+  }
+  if (mqDesk.matches) iniciarDesktop();
+  else if (mqDesk.addEventListener) mqDesk.addEventListener('change', function (e) { if (e.matches) iniciarDesktop(); });
 })();

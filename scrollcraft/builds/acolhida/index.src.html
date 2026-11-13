@@ -15,12 +15,12 @@
   <link rel="stylesheet" href="acolhida.css">
 </head>
 <body>
-  <a class="skip" href="#conteudo">Ir para o conteúdo</a>
+  <a class="skip set-d" href="#conteudo">Ir para o conteúdo</a>
 
   <!-- Paths of the flower-brain, vectorised from the client's own logo. Cloned by JS. -->
   <template id="flor-tpl"><svg xmlns="http://www.w3.org/2000/svg">__FLOR__</svg></template>
 
-  <header class="nav">
+  <header class="nav set-d">
     <a class="nav__marca" href="#abertura">Luciana Ferreira <span>Psicóloga Clínica</span></a>
     <nav class="nav__indice" aria-label="Capítulos">
       <a href="#nome" data-cap="nome">Para quem</a>
@@ -33,12 +33,12 @@
   </header>
 
   <!-- Signature: the emblem is drawn by the visitor's scroll and completes at the invitation -->
-  <div class="emblema" aria-hidden="true"><svg class="flor" data-flor="emblema" viewBox="0 0 1036 937"></svg></div>
+  <div class="emblema set-d" aria-hidden="true"><svg class="flor" data-flor="emblema" viewBox="0 0 1036 937"></svg></div>
 
   <!-- Peak colour layer (Act 4) -->
-  <div class="lilas-fundo" aria-hidden="true"></div>
+  <div class="lilas-fundo set-d" aria-hidden="true"></div>
 
-  <main id="conteudo">
+  <main id="conteudo" class="set-d">
 
     <!-- ACT 1 · Abertura · parallax layers -->
     <section class="ato abertura" id="abertura" data-ato>
@@ -302,6 +302,194 @@
       </div>
     </section>
   </main>
+
+  <!-- ===== Component set 2 · phones (< 768px): conversion page. The desktop set above is hidden by CSS at this width. ===== -->
+  <div class="set-m">
+    <a class="skip" href="#m-conteudo">Ir para o conteúdo</a>
+
+    <header class="m-topo">
+      <a class="m-topo__marca" href="#m-inicio"><img src="assets/logo-ameixa.png" alt="" width="40" height="36"><span>Luciana Ferreira <small>Psicóloga Clínica</small></span></a>
+    </header>
+
+    <main id="m-conteudo">
+      <section class="m-hero" id="m-inicio">
+        <div class="m-wrap">
+          <ul class="m-chips" aria-label="Formas de atendimento">
+            <li>Presencial na Barra da Tijuca</li>
+            <li>Online</li>
+            <li>Adultos, adolescentes e crianças</li>
+          </ul>
+          <h1>Sua busca pode terminar aqui.</h1>
+          <p class="m-lead">Cuidado e parceria para atravessar o que pesa, no seu tempo e do seu jeito.</p>
+          <div class="m-hero__botoes">
+            <a class="btn btn--grande m-btn-wa" data-wa href="#m-contato"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21l1.6-4.7A8.5 8.5 0 1 1 8 19.5L3 21Z"/><path d="M9 8.5c0 3.5 3 6.5 6.500 6.500l1-1.600-2-1-.9.800c-1-.4-2-1.300-2.400-2.400l.8-.9-1-2L9 8.500Z"/></svg>Chamar no WhatsApp</a>
+            <a class="btn btn--leve" href="#m-contato">Prefiro preencher um formulário</a>
+          </div>
+          <figure class="m-hero__foto">
+            <img src="assets/luciana-hero-800.webp" srcset="assets/luciana-hero-480.webp 480w, assets/luciana-hero-800.webp 800w"
+                 sizes="(max-width: 767px) 72vw, 400px" width="800" height="1000" fetchpriority="high"
+                 alt="Luciana Ferreira sorrindo em seu consultório">
+            <figcaption><strong>CRP&nbsp;05/79.059</strong> Psicóloga clínica e neuromodulação</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="m-sec" id="m-servicos" aria-labelledby="m-servicos-t">
+        <div class="m-wrap">
+          <p class="m-eyebrow">Atendimentos</p>
+          <h2 id="m-servicos-t">Como posso te ajudar</h2>
+          <ul class="m-cards">
+            <li class="m-card">
+              <h3>Psicoterapia para adultos</h3>
+              <p>Ansiedade, estresse, insônia, depressão, pânico, burnout, traumas, relacionamentos, autoestima e neurodivergências.</p>
+              <p class="m-card__meta">Presencial ou online</p>
+              <a class="m-card__link" data-wa data-wa-msg="Olá, Luciana! Gostaria de saber mais sobre a psicoterapia para adultos." href="#m-contato">Perguntar sobre este atendimento</a>
+            </li>
+            <li class="m-card">
+              <h3>Crianças, adolescentes e orientação parental</h3>
+              <p>Acolhimento para cada fase do desenvolvimento, com orientação para a família acompanhar o processo.</p>
+              <p class="m-card__meta">Presencial ou online</p>
+              <a class="m-card__link" data-wa data-wa-msg="Olá, Luciana! Gostaria de saber mais sobre o atendimento de criança ou adolescente." href="#m-contato">Perguntar sobre este atendimento</a>
+            </li>
+            <li class="m-card">
+              <h3>Gestação e puerpério</h3>
+              <p>Um espaço de escuta para as mudanças, as dúvidas e as emoções desse período.</p>
+              <p class="m-card__meta">Presencial ou online</p>
+              <a class="m-card__link" data-wa data-wa-msg="Olá, Luciana! Gostaria de saber mais sobre o acompanhamento na gestação e no puerpério." href="#m-contato">Perguntar sobre este atendimento</a>
+            </li>
+            <li class="m-card">
+              <h3>Neuromodulação não invasiva</h3>
+              <p>Recurso complementar à psicoterapia (tDCS, estimulação do nervo vago e fotobiomodulação). A indicação é individual e definida após avaliação clínica.</p>
+              <p class="m-card__meta">Presencial, quando indicada</p>
+              <a class="m-card__link" data-wa data-wa-msg="Olá, Luciana! Gostaria de saber mais sobre a neuromodulação." href="#m-contato">Perguntar sobre este atendimento</a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="m-sec m-sec--tom" id="m-investimento" aria-labelledby="m-invest-t">
+        <div class="m-wrap">
+          <p class="m-eyebrow">Investimento</p>
+          <h2 id="m-invest-t">Valores combinados com transparência</h2>
+          <p>O valor depende do tipo de atendimento e da modalidade. Eu passo tudo com clareza na primeira conversa, antes de qualquer compromisso.</p>
+          <ul class="m-fatos">
+            <li><strong>Sessões</strong> pagas via Pix.</li>
+            <li><strong>Neuromodulação</strong> em pacotes, que podem ser parcelados no cartão de crédito, a combinar (taxas incluídas).</li>
+          </ul>
+          <a class="btn" data-wa data-wa-msg="Olá, Luciana! Gostaria de saber os valores e como funciona o pagamento." href="#m-contato">Perguntar os valores</a>
+        </div>
+      </section>
+
+      <section class="m-sec" id="m-confianca" aria-labelledby="m-conf-t">
+        <div class="m-wrap">
+          <p class="m-eyebrow">Quem cuida</p>
+          <h2 id="m-conf-t">Rigor científico e humanidade</h2>
+          <dl class="m-prova">
+            <div><dt>Registro profissional</dt><dd>CRP&nbsp;05/79.059</dd></div>
+            <div><dt>Formação</dt><dd>Psicologia (UNISUAM) e Serviço Social (UERJ)</dd></div>
+            <div><dt>Pós-graduações</dt><dd>Psicanálise, Psicopedagogia, Suicidologia e Emergências em Saúde Mental, e atendimento a crianças e adolescentes vítimas de violência doméstica (PUC-Rio)</dd></div>
+            <div><dt>Abordagens</dt><dd>Psicanálise, Terapias Comportamentais de 3ª Onda e Terapia Focada nas Emoções</dd></div>
+            <div><dt>Experiência</dt><dd>Desde 2008, no suporte emocional e em emergências. Na Sala Lilás, acolhi e acompanhei vítimas de violência doméstica.</dd></div>
+            <div><dt>Sigilo</dt><dd>Tudo o que você compartilha é protegido pelo Código de Ética Profissional do Psicólogo.</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="m-sec m-sec--tom" id="m-como" aria-labelledby="m-como-t">
+        <div class="m-wrap">
+          <p class="m-eyebrow">Atendimento</p>
+          <h2 id="m-como-t">Como começa</h2>
+          <ol class="m-passos">
+            <li><h3>Primeiro contato</h3><p>Você me chama pelo WhatsApp e combinamos o melhor horário.</p></li>
+            <li><h3>Acolhimento inicial</h3><p>Conversamos sobre o que você está vivendo e o que espera, sem pressa.</p></li>
+            <li><h3>Plano individualizado</h3><p>Definimos juntas o caminho, com ou sem recursos complementares.</p></li>
+            <li><h3>Acompanhamento</h3><p>Encontros regulares para desenvolver autonomia e bem-estar.</p></li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="m-sec" id="m-onde" aria-labelledby="m-onde-t">
+        <div class="m-wrap">
+          <p class="m-eyebrow">Onde e quando</p>
+          <h2 id="m-onde-t">Presencial ou online</h2>
+          <div class="m-local">
+            <h3>Presencial, Barra da Tijuca</h3>
+            <ul class="m-horarios">
+              <li><span>Terça</span> 9h às 20h30</li>
+              <li><span>Quinta</span> 14h às 20h</li>
+              <li><span>Sexta</span> 14h às 20h</li>
+            </ul>
+            <p>Copsico, Dimension Office &amp; Park<br>Av. Embaixador Abelardo Bueno, 1, Bloco Lagoa 2, sala 210<br>Barra da Tijuca, Rio de Janeiro, RJ</p>
+            <a class="btn btn--leve" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&amp;destination=Dimension+Office+%26+Park%2C+Barra+da+Tijuca%2C+Rio+de+Janeiro">Ver rota no Google Maps</a>
+          </div>
+          <div class="m-local">
+            <h3>Online</h3>
+            <p>Atendimento por videochamada, de onde você estiver. Horários a combinar pelo WhatsApp.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="m-sec m-sec--contato" id="m-contato" aria-labelledby="m-contato-t">
+        <div class="m-wrap">
+          <p class="m-eyebrow">Contato</p>
+          <h2 id="m-contato-t">Vamos conversar?</h2>
+          <p>Três respostas rápidas e a conversa abre no WhatsApp, com a mensagem pronta.</p>
+          <form class="m-form" id="m-form" action="https://wa.me/5521966410350" method="get" target="_blank">
+            <div class="m-campo">
+              <label for="m-nome">Seu nome</label>
+              <input id="m-nome" name="nome" type="text" autocomplete="given-name" required maxlength="60">
+            </div>
+            <fieldset class="m-campo">
+              <legend>Como prefere o atendimento?</legend>
+              <label class="m-opcao"><input type="radio" name="modalidade" value="presencial"> Presencial</label>
+              <label class="m-opcao"><input type="radio" name="modalidade" value="online"> Online</label>
+              <label class="m-opcao"><input type="radio" name="modalidade" value="" checked> Ainda não sei</label>
+            </fieldset>
+            <div class="m-campo">
+              <label for="m-assunto">Sobre o que quer conversar?</label>
+              <select id="m-assunto" name="assunto">
+                <option value="">Prefiro contar na conversa</option>
+                <option>Ansiedade, estresse ou insônia</option>
+                <option>Tristeza, pânico ou burnout</option>
+                <option>Gestação ou puerpério</option>
+                <option>Atendimento para criança ou adolescente</option>
+                <option>Neuromodulação</option>
+                <option>Outro assunto</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn--grande m-btn-wa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21l1.6-4.7A8.5 8.5 0 1 1 8 19.5L3 21Z"/><path d="M9 8.5c0 3.5 3 6.5 6.500 6.500l1-1.600-2-1-.9.800c-1-.4-2-1.300-2.400-2.400l.8-.9-1-2L9 8.500Z"/></svg>Continuar no WhatsApp</button>
+            <p class="m-nota">Nada é guardado neste site: ao enviar, o WhatsApp abre com a sua mensagem pronta. Não escreva aqui informações sensíveis; elas ficam para a conversa.</p>
+          </form>
+          <ul class="m-contatos">
+            <li><a href="tel:+5521966410350">Ligar: (21) 96641-0350</a></li>
+            <li><a href="mailto:lu.lucianaalves@gmail.com">lu.lucianaalves@gmail.com</a></li>
+            <li><a href="https://www.instagram.com/luciana.afs/" target="_blank" rel="noopener">Instagram @luciana.afs</a></li>
+          </ul>
+          <p class="crise"><strong>Em crise agora?</strong> Ligue para o CVV&nbsp;188 (24h, gratuito) ou SAMU&nbsp;192.</p>
+        </div>
+      </section>
+
+      <section class="m-sec" id="m-duvidas" aria-labelledby="m-duv-t">
+        <div class="m-wrap">
+          <p class="m-eyebrow">Dúvidas</p>
+          <h2 id="m-duv-t">Perguntas frequentes</h2>
+          <div class="m-faq">
+            <details><summary>Atende online?</summary><p>Sim. O atendimento por videochamada pode ser feito de onde você estiver. Combinamos os horários pelo WhatsApp.</p></details>
+            <details><summary>Como funciona o pagamento?</summary><p>As sessões são pagas via Pix. Os pacotes de neuromodulação podem ser parcelados no cartão de crédito, a combinar.</p></details>
+            <details><summary>O que é a conversa inicial?</summary><p>É o primeiro passo: você conta o que está vivendo e o que espera, e juntas definimos o caminho. Sem pressa e sem compromisso.</p></details>
+            <details><summary>Meus dados ficam protegidos?</summary><p>Sim. O conteúdo dos atendimentos é protegido pelo sigilo previsto no Código de Ética Profissional do Psicólogo.</p></details>
+            <details><summary>A neuromodulação substitui a terapia?</summary><p>Não. É um recurso complementar, indicado individualmente após avaliação clínica, e não substitui a psicoterapia nem o acompanhamento médico, quando necessário. Os resultados variam de pessoa para pessoa.</p></details>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Always-visible way to reach her -->
+    <div class="m-barra" role="region" aria-label="Contato rápido">
+      <a class="btn m-btn-wa" data-wa href="#m-contato"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21l1.6-4.7A8.5 8.5 0 1 1 8 19.5L3 21Z"/><path d="M9 8.5c0 3.5 3 6.5 6.500 6.500l1-1.600-2-1-.9.800c-1-.4-2-1.300-2.400-2.400l.8-.9-1-2L9 8.500Z"/></svg>WhatsApp</a>
+      <a class="btn btn--leve" href="tel:+5521966410350">Ligar</a>
+    </div>
+  </div>
 
   <footer class="rodape">
     <div class="rodape__in">
