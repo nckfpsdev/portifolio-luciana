@@ -152,9 +152,15 @@ main, .rodape { position: relative; z-index: 1; }
 .lista { padding: clamp(40px, 8vw, 100px) 0; }
 .lista__in { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(24px, 6vw, 80px); align-items: start; }
 .lista h2 { font-size: clamp(1.9rem, 3.4vw, 2.8rem); }
-.lista__itens { display: grid; grid-template-columns: 1fr 1fr; gap: 0 1.6rem; }
-.lista__itens li { padding: .85rem 0; border-bottom: 1px solid rgba(109,44,107,.14); font-weight: 600; color: var(--ink); }
-.lista__apoio { grid-column: 2; color: var(--ink-soft); }
+.lista__itens { display: grid; grid-template-columns: 1fr 1fr; gap: .9rem; }
+.lista__itens li { position: relative; display: flex; align-items: center; gap: .85rem; min-height: 72px; padding: .95rem 1.15rem; border-radius: 16px; background: var(--surface); border: 1px solid rgba(109,44,107,.1); font-weight: 600; line-height: 1.35; color: var(--ink); box-shadow: 0 10px 24px -20px rgba(74,31,72,.5); transition: transform .5s var(--ease-out), box-shadow .5s var(--ease-out), border-color .4s ease, background-color .4s ease; }
+.lista__itens li::before { content: ""; flex: none; width: 34px; height: 34px; border-radius: 50%; background: var(--lilas-claro) radial-gradient(circle at 50% 50%, var(--ameixa-2) 0 4px, transparent 4.5px); transition: transform .6s var(--ease-out), background-color .4s ease; }
+.lista__itens li:hover { transform: translateY(-4px); border-color: rgba(109,44,107,.28); box-shadow: 0 18px 30px -20px rgba(74,31,72,.55); }
+.lista__itens li:hover::before { transform: scale(1.12) rotate(45deg); background-color: var(--champanhe); }
+.lista__apoio { grid-column: 2; position: relative; margin-top: .6rem; padding: 2.2rem 1.8rem 1.8rem 2.2rem; border-radius: var(--raio); overflow: hidden; background: linear-gradient(135deg, color-mix(in srgb, var(--champanhe) 70%, var(--surface)), color-mix(in srgb, var(--lilas-claro) 70%, var(--surface))); box-shadow: var(--sombra); }
+.lista__aspas { position: absolute; top: -.25em; left: .12em; font-family: var(--font-display); font-weight: 600; font-size: 9rem; line-height: 1; color: var(--ameixa); opacity: .16; pointer-events: none; user-select: none; }
+.lista__apoio p { position: relative; font-family: var(--font-display); font-size: clamp(1.4rem, 2.2vw, 1.85rem); font-style: italic; font-weight: 500; line-height: 1.3; color: var(--ameixa); max-width: 22em; }
+.abertura__botoes { display: flex; flex-wrap: wrap; gap: .8rem 1rem; align-items: center; }
 
 /* ACT 3: Quem cuida, curtain reveal */
 .quem { padding: clamp(60px, 10vw, 140px) 0; }
@@ -312,7 +318,8 @@ main, .rodape { position: relative; z-index: 1; }
   .lista__in, .quem__in, .convite__in, .neuro__cab, .como__local { grid-template-columns: 1fr; }
   .mapa { min-height: 280px; }
   .lista__itens { grid-template-columns: 1fr; }
-  .lista__apoio { grid-column: 1; }
+  .lista__apoio { grid-column: 1; padding: 1.8rem 1.3rem 1.4rem 1.5rem; }
+  .lista__aspas { font-size: 7rem; }
   .quem__fichas div { grid-template-columns: 1fr; gap: .2rem; }
   .lilas { height: 300svh; }
   .lilas .pin { width: calc(100% - 32px); }
@@ -370,3 +377,9 @@ main, .rodape { position: relative; z-index: 1; }
   .abertura__cena { width: min(100%, max(400px, 58svh)); }
   .lead { font-size: clamp(1.15rem, 2.1svh, 1.5rem); }
 }
+/* List cards: stagger the entrance, but keep hover instant-feeling (delays apply only to the reveal) */
+.anima .lista__itens li[data-revela] { transition: opacity .9s var(--ease-out) calc(var(--i, 0) * 85ms), translate 1.2s var(--ease-out) calc(var(--i, 0) * 85ms), transform .5s var(--ease-out) 0s, box-shadow .5s var(--ease-out) 0s, border-color .4s ease 0s; }
+.lista__in { row-gap: 1.4rem; }
+.lista__itens li { text-wrap: pretty; }
+.lista__aspas { top: .02em; left: .1em; font-size: 8rem; }
+.lista__apoio { padding-top: 2.6rem; }
