@@ -12,7 +12,7 @@
   });
 
   // Instagram: preencher quando o @ for confirmado
-  var INSTAGRAM = '';
+  var INSTAGRAM = 'https://www.instagram.com/luciana.afs/';
   document.querySelectorAll('[data-insta]').forEach(function (el) {
     if (INSTAGRAM) el.setAttribute('href', INSTAGRAM);
     else el.closest('li').hidden = true;
