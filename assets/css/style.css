@@ -116,6 +116,9 @@ p + p { margin-top: 1rem; }
 .galeria img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: var(--raio); box-shadow: var(--sombra); }
 .galeria figcaption { margin-top: .6rem; font-size: .92rem; color: var(--texto-suave); }
 
+.bloco.bloco--frase { display: grid; place-items: center; text-align: center; background: var(--lilas-100); border-color: var(--lilas-200); }
+.bloco--frase .frase { font-family: var(--serif); font-weight: 600; font-size: clamp(2rem, 3vw, 2.6rem); line-height: 1.1; color: var(--ameixa-700); }
+.bloco--frase .frase em { font-weight: 500; color: var(--ameixa-600); opacity: .6; }
 .tres { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
 .bloco { background: #fff; border: 1px solid var(--lilas-200); border-radius: var(--raio); padding: 1.6rem; box-shadow: var(--sombra); }
 .bloco p { color: var(--texto-suave); font-size: .98rem; }

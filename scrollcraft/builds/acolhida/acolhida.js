@@ -188,8 +188,11 @@
       var pNe = suave((progresso(neuro, 'pin', y) - 0.06) / 0.86);
       por(trilho, '--x', (-pNe * distancia).toFixed(1) + 'px');
       por(trilho, '--px', ((pNe - 0.5) * 48).toFixed(1));
+      /* "futuro" solidifies as the last panel arrives; complete before the rail ends */
+      por(neuro, '--pn', clamp((pNe - 0.45) / 0.45).toFixed(3));
     } else {
       por(trilho, '--x', '0px'); por(trilho, '--px', '0');
+      por(neuro, '--pn', '1');
     }
 
     /* Act 6: pinned; each step arrives in turn and shows what it does */
