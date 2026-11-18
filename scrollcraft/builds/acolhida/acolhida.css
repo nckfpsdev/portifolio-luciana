@@ -445,6 +445,14 @@ main, .rodape { position: relative; z-index: 1; }
   .m-hero__foto img { display: block; width: 100%; height: auto; border-radius: 200px 200px var(--raio) var(--raio); box-shadow: var(--sombra); }
   .m-hero__foto figcaption { position: relative; margin: -1.6rem -4% 0 22%; padding: .7rem 1rem; border-radius: 16px; background: var(--surface); box-shadow: var(--sombra); font-size: .85rem; color: var(--ink-soft); line-height: 1.3; }
   .m-hero__foto strong { display: block; color: var(--ameixa); font-size: .98rem; }
+  /* Hero entrance: chips, title, lead, buttons and portrait arrive in sequence */
+  .anima .m-chips li { animation: surgir .9s var(--ease-out) backwards; animation-delay: calc(.1s + var(--c, 0) * 70ms); }
+  .anima .m-chips li:nth-child(2) { --c: 1; } .anima .m-chips li:nth-child(3) { --c: 2; }
+  .anima .m-hero h1 { animation: surgir 1.1s var(--ease-out) .3s backwards; }
+  .anima .m-lead { animation: surgir 1.1s var(--ease-out) .5s backwards; }
+  .anima .m-hero__botoes { animation: surgir 1.1s var(--ease-out) .65s backwards; }
+  .anima .m-hero__foto img { animation: abrir-arco 1.4s var(--ease-io) .45s backwards; }
+  .anima .m-hero__foto figcaption { animation: selo .9s var(--ease-out) 1.2s backwards; }
   .m-btn-wa { gap: .6rem; }
   .m-btn-wa svg, .m-barra svg { width: 1.3em; height: 1.3em; flex: none; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 

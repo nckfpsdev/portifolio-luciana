@@ -39,6 +39,30 @@
     });
   })();
 
+  /* Phones: content rises into place as each section arrives (same [data-revela] styles as desktop) */
+  (function () {
+    if (reduce || !('IntersectionObserver' in window)) return;
+    var sel = ['.m-sec .m-eyebrow', '.m-sec h2', '.m-sec .m-wrap > p', '.m-sec .m-wrap > .btn',
+      '.m-card', '.m-fatos li', '.m-prova > div', '.m-passos li', '.m-local', '.m-neuro__foto',
+      '.m-respira__flor', '.m-respira .respira', '.m-form', '.m-contatos li', '.m-faq details'];
+    var els = [];
+    sel.forEach(function (s) {
+      var porPai = new Map();
+      document.querySelectorAll('.set-m ' + s).forEach(function (el) {
+        if (el.hasAttribute('data-revela')) return;
+        var i = porPai.get(el.parentNode) || 0;
+        porPai.set(el.parentNode, i + 1);
+        el.setAttribute('data-revela', '');
+        el.style.setProperty('--i', Math.min(i, 6));
+        els.push(el);
+      });
+    });
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('visto'); io.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -12% 0px' });
+    els.forEach(function (el) { io.observe(el); });
+  })();
+
   /* Phones: "futuro" in the neuromodulation heading solidifies once the heading is in view */
   (function () {
     var t = document.getElementById('m-neuro-t'); if (!t) return;
