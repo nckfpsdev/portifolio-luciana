@@ -39,6 +39,47 @@
     });
   })();
 
+  /* Phones: "futuro" in the neuromodulation heading solidifies once the heading is in view */
+  (function () {
+    var t = document.getElementById('m-neuro-t'); if (!t) return;
+    if (reduce || !('IntersectionObserver' in window)) { t.classList.add('vista'); return; }
+    var io = new IntersectionObserver(function (es) {
+      if (es[0].isIntersecting) { t.classList.add('vista'); io.disconnect(); }
+    }, { rootMargin: '0px 0px -30% 0px' });
+    io.observe(t);
+  })();
+
+  /* Breathe with me (4 in, 4 hold, 6 out, three times). Wired for both component sets:
+     desktop (Act 7, the drawn flower breathes) and phones (the static flower breathes).
+     data-respira-box names the element that gets the .respirando class. */
+  var fases = [['Inspire…', 4000], ['Segure…', 4000], ['Solte devagar…', 6000]];
+  document.querySelectorAll('.respira').forEach(function (r) {
+    var botao = r.querySelector('[data-respira]'), fala = r.querySelector('.respira__fala');
+    var florBox = document.querySelector(r.getAttribute('data-respira-box'));
+    if (!botao || !fala) return;
+    function dizer(txt) {
+      fala.classList.remove('troca'); void fala.offsetWidth; fala.classList.add('troca');
+      fala.textContent = txt;
+    }
+    botao.addEventListener('click', function () {
+      botao.disabled = true;
+      if (florBox && !reduce) { florBox.classList.remove('respirando'); void florBox.offsetWidth; florBox.classList.add('respirando'); }
+      var passo = 0, total = fases.length * 3;
+      (function proxima() {
+        if (passo >= total) {
+          dizer('Quando quiser, estou aqui.');
+          botao.disabled = false; botao.textContent = 'Respirar de novo';
+          if (florBox) florBox.classList.remove('respirando');
+          return;
+        }
+        var f = fases[passo % fases.length];
+        dizer(f[0]);
+        passo++;
+        setTimeout(proxima, f[1]);
+      })();
+    });
+  });
+
   /* Desktop engine (smooth scroll, pinned acts, drawn flower): only started from 768px up.
      Below that the phone component set is shown and none of this runs. */
   var mqDesk = window.matchMedia('(min-width: 768px)');
@@ -124,7 +165,7 @@
     /* (the portrait has its own curtain and the flower is drawn, so neither is in this list) */
     var grupos = ['.lista__itens li', '.lista__apoio', '.quem__texto > p', '.quem__fichas > div',
       '.pilar', '.neuro__cab > p', '.como__sub', '.como__local',
-      '.convite__texto > p', '.respira', '.convite__texto > .btn', '.convite__contatos li'];
+      '.convite__texto > p', '.convite .respira', '.convite__texto > .btn', '.convite__contatos li'];
     grupos.forEach(function (sel) {
       var porPai = new Map();
       document.querySelectorAll(sel).forEach(function (el) {
@@ -321,32 +362,6 @@
     });
   })();
 
-  /* Act 7: breathe with me (4 in, 4 hold, 6 out, three times) */
-  var botao = document.querySelector('[data-respira]');
-  var fala = document.querySelector('.respira__fala');
-  var florBox = document.querySelector('.convite__flor');
-  var fases = [['Inspire…', 4000], ['Segure…', 4000], ['Solte devagar…', 6000]];
-  function dizer(txt) {
-    fala.classList.remove('troca'); void fala.offsetWidth; fala.classList.add('troca');
-    fala.textContent = txt;
-  }
-  botao.addEventListener('click', function () {
-    botao.disabled = true;
-    if (!reduce) { florBox.classList.remove('respirando'); void florBox.offsetWidth; florBox.classList.add('respirando'); }
-    var passo = 0, total = fases.length * 3;
-    (function proxima() {
-      if (passo >= total) {
-        dizer('Quando quiser, estou aqui.');
-        botao.disabled = false; botao.textContent = 'Respirar de novo';
-        florBox.classList.remove('respirando');
-        return;
-      }
-      var f = fases[passo % fases.length];
-      dizer(f[0]);
-      passo++;
-      setTimeout(proxima, f[1]);
-    })();
-  });
   }
   if (mqDesk.matches) iniciarDesktop();
   else if (mqDesk.addEventListener) mqDesk.addEventListener('change', function (e) { if (e.matches) iniciarDesktop(); });

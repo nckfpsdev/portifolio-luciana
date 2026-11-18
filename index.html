@@ -286,7 +286,7 @@
         <div class="convite__texto">
           <h2>A busca pode terminar aqui.</h2>
           <p>Se quiser, respire comigo antes de escrever. Depois, é só me chamar.</p>
-          <div class="respira">
+          <div class="respira" data-respira-box=".convite__flor">
             <button type="button" class="btn btn--leve" data-respira>Respirar comigo</button>
             <p class="respira__fala" aria-live="polite"></p>
           </div>
@@ -358,11 +358,36 @@
             </li>
             <li class="m-card">
               <h3>Neuromodulação não invasiva</h3>
-              <p>Recurso complementar à psicoterapia (tDCS, estimulação do nervo vago e fotobiomodulação). A indicação é individual e definida após avaliação clínica.</p>
+              <p>Recurso complementar à psicoterapia (tDCS e estimulação do nervo vago). A indicação é individual e definida após avaliação clínica.</p>
               <p class="m-card__meta">Presencial, quando indicada</p>
-              <a class="m-card__link" data-wa data-wa-msg="Olá, Luciana! Gostaria de saber mais sobre a neuromodulação." href="#m-contato">Perguntar sobre este atendimento</a>
+              <a class="m-card__link" href="#m-neuro">Conhecer a neuromodulação</a>
             </li>
           </ul>
+        </div>
+      </section>
+
+      <section class="m-sec m-neuro" id="m-neuro" aria-labelledby="m-neuro-t">
+        <div class="m-wrap">
+          <p class="m-eyebrow">Neuromodulação</p>
+          <h2 id="m-neuro-t">O <em>futuro</em> se vive no <strong>presente</strong>!</h2>
+          <p>Recursos complementares à psicoterapia. A indicação é sempre individual e definida após avaliação clínica.</p>
+          <figure class="m-neuro__foto">
+            <img src="/scrollcraft/builds/acolhida/assets/neuromodulacao-foco-800.webp" srcset="/scrollcraft/builds/acolhida/assets/neuromodulacao-foco-480.webp 480w, /scrollcraft/builds/acolhida/assets/neuromodulacao-foco-800.webp 800w"
+                 sizes="(max-width: 767px) calc(100vw - 32px), 560px" width="800" height="1000" loading="lazy"
+                 alt="Luciana sorrindo, de jaleco, durante uma atividade">
+          </figure>
+          <ul class="m-cards">
+            <li class="m-card">
+              <h3>Estimulação transcraniana por corrente contínua <span>(tDCS)</span></h3>
+              <p>Técnica não invasiva de modulação da atividade cerebral, usada como apoio em quadros emocionais.</p>
+            </li>
+            <li class="m-card">
+              <h3>Estimulação transcutânea do nervo vago</h3>
+              <p>Recurso de modulação autonômica que pode auxiliar na regulação emocional e do estresse.</p>
+            </li>
+          </ul>
+          <p class="m-neuro__aviso">A neuromodulação não substitui a psicoterapia nem o acompanhamento médico, quando necessário. Os resultados variam de pessoa para pessoa.</p>
+          <a class="btn" data-wa data-wa-msg="Olá, Luciana! Gostaria de saber mais sobre a neuromodulação." href="#m-contato">Perguntar sobre a neuromodulação</a>
         </div>
       </section>
 
@@ -424,6 +449,19 @@
           <div class="m-local">
             <h3>Online</h3>
             <p>Atendimento por videochamada, de onde você estiver. Horários a combinar pelo WhatsApp.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="m-sec m-respira" id="m-respira" aria-labelledby="m-respira-t">
+        <div class="m-wrap">
+          <p class="m-eyebrow">Antes de escrever</p>
+          <h2 id="m-respira-t">Respire comigo</h2>
+          <p>Se quiser, faça três respirações lentas. Depois, é só me chamar.</p>
+          <div class="m-respira__flor"><img src="/scrollcraft/builds/acolhida/assets/flor.svg" alt="" width="1036" height="937" loading="lazy"></div>
+          <div class="respira" data-respira-box=".m-respira__flor">
+            <button type="button" class="btn btn--leve" data-respira>Respirar comigo</button>
+            <p class="respira__fala" aria-live="polite"></p>
           </div>
         </div>
       </section>

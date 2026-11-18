@@ -459,6 +459,24 @@ main, .rodape { position: relative; z-index: 1; }
   .m-fatos li { padding: .9rem 1rem; border-radius: 16px; background: var(--surface); border: 1px solid var(--lilas-claro); font-size: .98rem; }
   .m-fatos strong { color: var(--ameixa); }
 
+  /* Neuromodulação: "futuro" starts faint and solidifies once the heading is in view (class set by acolhida.js) */
+  .m-neuro h2 em { font-style: italic; font-weight: 500; color: var(--ameixa-2); }
+  .m-neuro h2 strong { font-weight: 600; }
+  /* transition only on the way in, so the faint start is instant when the script loads */
+  .anima:not(.no-js) .m-neuro h2 em { opacity: .22; }
+  .anima:not(.no-js) .m-neuro h2.vista em { opacity: 1; transition: opacity 1.4s ease-out .25s; }
+  .m-neuro__foto { margin: 1.5rem 0; }
+  .m-neuro__foto img { display: block; width: 100%; height: auto; border-radius: var(--raio); box-shadow: var(--sombra); }
+  .m-neuro .m-card h3 span { font-style: italic; color: var(--ameixa-2); }
+  /* Breathe with me: the flower grows on the in-breath, holds, and shrinks on the out-breath (14s cycle, same keyframes as desktop) */
+  .m-respira { background: linear-gradient(180deg, transparent, color-mix(in srgb, var(--lilas-claro) 65%, transparent)); }
+  .m-respira__flor { width: 62%; max-width: 260px; margin: 1.6rem auto .4rem; }
+  .m-respira__flor img { display: block; width: 100%; height: auto; transform: scale(.94); transform-origin: 50% 60%; }
+  .m-respira__flor.respirando img { animation: respirar 14s ease-in-out 3; }
+  .m-respira .respira { justify-content: center; text-align: center; flex-direction: column; gap: .8rem; margin: 1rem 0 0; }
+  .m-respira .respira .btn { width: 100%; }
+  .m-neuro__aviso { margin-top: 1.2rem; padding-left: 1rem; border-left: 3px solid var(--lilas); font-size: .92rem; color: var(--ink-soft); }
+
   /* Trust facts (in place of patient testimonials) */
   .m-prova { display: grid; gap: .2rem; }
   .m-prova > div { padding: 1rem 0; border-bottom: 1px solid var(--lilas-claro); }
